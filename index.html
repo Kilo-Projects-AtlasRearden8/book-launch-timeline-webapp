@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Launch Timeline | Asdale Dynamics</title>
+    <meta name="description" content="Pick your book launch date and get a backward checklist for ARC readers, preorder, ads, and newsletter. Data stays in your browser.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>Book Launch Timeline</h1>
+        <p class="subtitle">Pick a launch date. Get a ready-made backward checklist.</p>
+    </header>
+
+    <main class="app-main">
+        <section class="date-section">
+            <label for="launch-date">Launch date</label>
+            <input type="date" id="launch-date" name="launch-date" required>
+        </section>
+
+        <div id="save-message" class="save-message" aria-live="polite" role="status"></div>
+
+        <section class="checklist-section">
+            <h2>Pre-Launch Checklist</h2>
+            <p class="checklist-intro">Items are sorted earliest-first, working backward from your launch date. Mark each complete as you go—your progress saves automatically in this browser.</p>
+            <div id="checklist" class="checklist-grid">
+                <p class="loading">Calculating your timeline...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>Everything you enter stays in your browser using localStorage. No account, no tracking, no server.</p>
+        <button id="clear-data" type="button" class="clear-btn">Clear all data</button>
+        <p class="credit">Built by <a href="https://dylanasdale.github.io" target="_blank" rel="noopener">Asdale Dynamics, LLC</a>.</p>
+    </footer>
+
+    <script src="js/date-utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

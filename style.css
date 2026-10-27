@@ -1,0 +1,286 @@
+:root {
+    --bg: #fdfaf5;
+    --surface: #ffffff;
+    --text: #4a4a4a;
+    --text-soft: #8c8c8c;
+    --accent: #d48a4a;
+    --accent-soft: #f3e6db;
+    --border: #e8e0d8;
+    --border-strong: #d4c8bd;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --success: #5a9a5a;
+    --success-bg: #eef5ef;
+    --radius: 10px;
+    --radius-pill: 9999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.app-main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.date-section {
+    margin-bottom: 2rem;
+}
+
+.date-section label {
+    display: block;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#launch-date {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.85rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background: var(--surface);
+    color: var(--text);
+    cursor: text;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#launch-date:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+#launch-date::-webkit-calendar-picker {
+    filter: invert(0.5) sepia(0.3) saturate(2) hue-rotate(-15deg);
+}
+
+.save-message {
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 0.875rem;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.save-message.visible {
+    opacity: 1;
+}
+
+.checklist-section {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.checklist-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.checklist-intro {
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.loading {
+    color: var(--text-soft);
+    font-style: italic;
+}
+
+.checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.checklist-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.checklist-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-soft);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.item-day {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.item-date {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    font-weight: 500;
+}
+
+.item-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.item-description {
+    color: var(--text-soft);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.item-relation {
+    margin-bottom: 1rem;
+}
+
+.relation-label {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-pill);
+    font-weight: 500;
+}
+
+.complete-btn {
+    width: 100%;
+    padding: 0.7rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.complete-btn:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+
+.complete-btn.done {
+    background: var(--success-bg);
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.complete-btn.done:hover {
+    background: var(--success-bg);
+}
+
+.app-footer {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: var(--text-soft);
+    font-size: 0.85rem;
+}
+
+.app-footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.app-footer a:hover {
+    text-decoration: underline;
+}
+
+.clear-btn {
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--text-soft);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin: 0.5rem 0;
+    transition: border-color 0.2s;
+}
+
+.clear-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.credit {
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .app-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .checklist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .checklist-section {
+        padding: 1.5rem;
+    }
+
+    body {
+        padding: 1rem 0.5rem;
+    }
+}

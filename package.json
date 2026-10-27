@@ -1,0 +1,21 @@
+{
+  "name": "book-launch-timeline",
+  "version": "1.0.0",
+  "description": "Static web app for authors to pick a launch date and get a backward checklist (ARC readers, preorder, ads, newsletter) saved in localStorage.",
+  "scripts": {
+    "test": "node --test tests/"
+  },
+  "keywords": [
+    "book-publishing",
+    "kdp",
+    "launch-checklist",
+    "authors",
+    "arc-readers",
+    "preorder",
+    "marketing",
+    "asdale-dynamics"
+  ],
+  "license": "MIT",
+  "author": "Asdale Dynamics, LLC",
+  "homepage": "https://dylanasdale.github.io"
+}
